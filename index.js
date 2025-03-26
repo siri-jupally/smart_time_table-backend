@@ -15,7 +15,16 @@ const app = express();
 const PORT = process.env.PORT || 5000;
 
 // Middleware
-app.use(cors());
+const allowedOrigins = [
+  "http://localhost:4000",
+  "https://your-frontend-domain.com"
+];
+
+app.use(cors({
+  origin: allowedOrigins,
+  methods: "GET, POST, PUT, DELETE, OPTIONS",
+  allowedHeaders: "Origin, X-Requested-With, Content-Type, Accept"
+}));
 app.use(express.json());
 
 // Basic health check route
