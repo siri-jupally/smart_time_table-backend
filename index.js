@@ -17,7 +17,7 @@ const PORT = process.env.PORT || 5000;
 // Middleware
 const allowedOrigins = [
   "http://localhost:4000",
-  "https://your-frontend-domain.com"
+  "https://smart-time-table-frontend.vercel.app/"
 ];
 
 app.use(cors({
